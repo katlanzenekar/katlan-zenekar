@@ -243,12 +243,11 @@ main { min-height: 70vh; }
 .genres-section span { color: var(--muted); font-size: 11px; }
 .genres-section h2 { margin: auto 0 18px; font-size: clamp(30px, 3vw, 45px); font-weight: 500; letter-spacing: -.03em; }
 .genres-section p { margin: 0; color: var(--muted); }
-.player-section { display: grid; grid-template-columns: minmax(240px, .65fr) minmax(0, 1.35fr); gap: clamp(40px, 7vw, 110px); padding: clamp(70px, 9vw, 130px) clamp(24px, 7vw, 110px); background: var(--paper); color: var(--ink); }
-.player-section iframe { border: 0; border-radius: 16px; }
-.player-heading { align-self: start; position: sticky; top: 126px; }
-.player-heading h2 { color: var(--rust); }
-.players-grid { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: stretch; }
-.spotify-player, .music-video { min-height: 352px; }
+.music-page { min-height: 100svh; padding: 120px clamp(20px, 5vw, 76px) clamp(54px, 7vw, 92px); background: var(--paper); }
+.music-page .platform-links { margin: 0 0 clamp(28px, 4vw, 48px); }
+.music-page iframe { border: 0; border-radius: 16px; }
+.players-grid { display: grid; grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr); gap: clamp(18px, 2.5vw, 36px); align-items: start; }
+.spotify-player { min-height: 352px; }
 .music-video { min-height: 0; aspect-ratio: 16 / 9; }
 
 .media-header {
