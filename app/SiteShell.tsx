@@ -90,19 +90,9 @@ function MusicPage({ language }: { language: Language }) {
           <p className="eyebrow">Katlan · 2025</p>
           <h1>Lenyomat</h1>
           <div className="platform-links" aria-label="Lenyomat album links">
-            <a href="https://open.spotify.com/album/03hWqmfJj0hGY8cBVP7b2y" target="_blank" rel="noreferrer">Spotify ↗</a>
+            <a className="spotify-link" href="https://open.spotify.com/album/03hWqmfJj0hGY8cBVP7b2y" target="_blank" rel="noreferrer">Lenyomat a Spotify-on ↗</a>
             <a href="https://music.apple.com/hu/album/lenyomat/1812287150" target="_blank" rel="noreferrer">Apple Music ↗</a>
           </div>
-          <iframe
-            className="spotify-player"
-            title="Katlan — Lenyomat Spotify"
-            src="https://open.spotify.com/embed/album/03hWqmfJj0hGY8cBVP7b2y?utm_source=generator&theme=0"
-            width="100%"
-            height="152"
-            allowFullScreen
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          />
         </div>
       </article>
       <div className="music-video-block">
