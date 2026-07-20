@@ -174,9 +174,9 @@ function MusicPage({ language }: { language: Language }) {
 function AboutPage({ language }: { language: Language }) {
   const t = content[language];
   const mapCopy = {
-    hu: { title: "Ahol már játszottunk", count: "27 helyszín · 4 ország", region: "Kárpát-medence", pan: "Interaktív térkép. Mobilon húzd oldalra, billentyűzettel használd a nyilakat." },
-    ro: { title: "Unde am cântat", count: "27 de locuri · 4 țări", region: "Bazinul Carpatic", pan: "Hartă interactivă. Glisează lateral pe mobil sau folosește săgețile tastaturii." },
-    en: { title: "Where we've played", count: "27 places · 4 countries", region: "Carpathian Basin", pan: "Interactive map. Swipe sideways on mobile or use the keyboard arrow keys." },
+    hu: { title: "Ahol már játszottunk", count: "27 helyszín · 4 ország", pan: "Interaktív térkép. Mobilon húzd oldalra, billentyűzettel használd a nyilakat." },
+    ro: { title: "Unde am cântat", count: "27 de locuri · 4 țări", pan: "Hartă interactivă. Glisează lateral pe mobil sau folosește săgețile tastaturii." },
+    en: { title: "Where we've played", count: "27 places · 4 countries", pan: "Interactive map. Swipe sideways on mobile or use the keyboard arrow keys." },
   }[language];
   const pin = (x: number, y: number, label: string) => (
     <g className="map-pin" transform={`translate(${x} ${y})`} tabIndex={0} role="img" aria-label={label} key={label}>
@@ -232,7 +232,6 @@ function AboutPage({ language }: { language: Language }) {
               <path d="M691 169 Q470 20 310 198" />
               <path d="M691 169 Q445 70 250 184" />
             </g>
-            <g className="map-point origin"><circle cx="691" cy="169" r="9" /><circle cx="691" cy="169" r="20" /></g>
             {pin(250, 184, "Denver")}
             {pin(303, 218, "Nashville")}
             {pin(310, 200, "Clay City")}
@@ -240,31 +239,26 @@ function AboutPage({ language }: { language: Language }) {
             {pin(615, 165, "Stuttgart")}
             {pin(625, 150, "München")}
             {pin(633, 130, "Berlin")}
-            <g className="regional-inset" transform="translate(755 282)">
-              <rect className="inset-frame" width="405" height="240" rx="18" />
-              <path className="inset-land" d="M35 91l54-38 79 14 52-22 76 21 65 45-18 77-90 25-92-10-79 19-55-58z" />
-              <text className="inset-title" x="22" y="32">{mapCopy.region}</text>
-              {pin(110, 100, "Budapest")}
-              {pin(48, 135, "Magyarföld")}
-              {pin(122, 87, "Nagymaros")}
-              {pin(96, 86, "Piliscsaba")}
-              {pin(88, 154, "Balatonszárszó")}
-              {pin(170, 104, "Nagyvárad")}
-              {pin(182, 78, "Szatmárnémeti")}
-              {pin(230, 110, "Kolozsvár")}
-              {pin(247, 91, "Szamosújvár")}
-              {pin(252, 105, "Válaszút")}
-              {pin(217, 100, "Méra")}
-              {pin(277, 132, "Marosvásárhely")}
-              {pin(225, 132, "Torockó")}
-              {pin(244, 145, "Csombord")}
-              {pin(304, 126, "Székelyudvarhely")}
-              {pin(314, 139, "Lengyelfalva")}
-              {pin(336, 119, "Csíkszereda")}
-              {pin(346, 99, "Balánbánya")}
-              {pin(329, 163, "Sepsiszentgyörgy")}
-              {pin(353, 176, "Zabola")}
-            </g>
+            {pin(650, 160, "Budapest")}
+            {pin(630, 176, "Magyarföld")}
+            {pin(648, 151, "Nagymaros")}
+            {pin(639, 158, "Piliscsaba")}
+            {pin(638, 169, "Balatonszárszó")}
+            {pin(660, 168, "Nagyvárad")}
+            {pin(668, 156, "Szatmárnémeti")}
+            {pin(682, 166, "Kolozsvár")}
+            {pin(688, 156, "Szamosújvár")}
+            {pin(693, 163, "Válaszút")}
+            {pin(676, 160, "Méra")}
+            {pin(701, 174, "Marosvásárhely")}
+            {pin(681, 176, "Torockó")}
+            {pin(691, 183, "Csombord")}
+            {pin(712, 171, "Székelyudvarhely")}
+            {pin(717, 178, "Lengyelfalva")}
+            {pin(724, 167, "Csíkszereda")}
+            {pin(729, 157, "Balánbánya")}
+            {pin(725, 187, "Sepsiszentgyörgy")}
+            {pin(734, 191, "Zabola")}
           </svg>
         </div>
       </section>
