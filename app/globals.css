@@ -253,7 +253,8 @@ main { min-height: 70vh; }
 .album-copy .platform-links { margin: 0 0 30px; }
 .album-copy .platform-links a, .music-video-block .platform-links a { border-color: rgba(246,246,245,.4); color: var(--paper); }
 .album-copy .platform-links a:hover, .music-video-block .platform-links a:hover { background: var(--accent); color: var(--dark); }
-.spotify-player { display: block; min-height: 152px; background: #121212; }
+.album-copy .platform-links .spotify-link { border-color: #1ed760; background: #1ed760; color: #101b0b; }
+.album-copy .platform-links .spotify-link:hover { border-color: var(--paper); background: var(--paper); }
 .music-video-block { padding: clamp(54px, 8vw, 110px) clamp(24px, 7vw, 110px); }
 .music-video-block .video-frame { width: 100%; max-width: 1400px; margin: 0 auto; }
 .music-video-block .platform-links { max-width: 1400px; margin: 24px auto 0; }
