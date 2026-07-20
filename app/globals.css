@@ -259,7 +259,6 @@ main { min-height: 70vh; }
 .tour-map-heading h2 { max-width: 820px; margin: 0; color: var(--accent); font-family: "Coastal Hand", Arial, sans-serif; font-size: clamp(58px, 7vw, 108px); font-weight: 400; line-height: .86; }
 .map-canvas { max-width: 1500px; margin: 0 auto; border: 1px solid rgba(246,246,245,.16); border-radius: 20px; background: radial-gradient(circle at 57% 32%, rgba(242,159,5,.12), transparent 29%), #192913; }
 .map-canvas svg { display: block; width: 100%; height: auto; }
-.mobile-map-stack { display: none; }
 .continents { fill: #20371a; stroke: rgba(246,246,245,.16); stroke-width: 2; stroke-linejoin: round; }
 .routes { fill: none; stroke: var(--sand); stroke-width: 2; stroke-dasharray: 7 9; opacity: .72; }
 .map-point circle:first-child { fill: var(--accent); }
@@ -412,14 +411,14 @@ main { min-height: 70vh; }
   .tour-map { padding: 62px 14px 72px; }
   .tour-map-heading { display: block; padding-inline: 8px; }
   .tour-map-heading h2 { margin-top: 15px; font-size: clamp(54px, 17vw, 76px); }
-  .map-canvas { overflow: visible; border: 0; background: transparent; }
-  .desktop-tour-map { display: none !important; }
-  .mobile-map-stack { display: grid; gap: 12px; }
-  .mobile-map-stack svg { width: 100%; border: 1px solid rgba(246,246,245,.16); border-radius: 14px; background: radial-gradient(circle at 57% 32%, rgba(242,159,5,.12), transparent 30%), #192913; }
-  .mobile-region-map { overflow: visible; }
-  .mobile-region-map .inset-frame { fill: #192913; }
-  .mobile-map-stack .pin-label rect { width: 132px; x: -66px; }
-  .mobile-map-stack .pin-label text { font-size: 10px; }
+  .map-canvas { width: calc(100% + 28px); margin-left: -14px; overflow-x: auto; overflow-y: hidden; border-width: 1px 0; border-radius: 0; scrollbar-width: none; overscroll-behavior-inline: contain; -webkit-overflow-scrolling: touch; }
+  .map-canvas::-webkit-scrollbar { display: none; }
+  .desktop-tour-map { width: 880px; max-width: none; cursor: grab; }
+  .desktop-tour-map:active { cursor: grabbing; }
+  .desktop-tour-map .pin-ring { r: 15px; stroke-width: 2.5; }
+  .desktop-tour-map .pin-core { r: 6.5px; }
+  .desktop-tour-map .pin-label rect { width: 210px; x: -105px; height: 42px; y: -58px; }
+  .desktop-tour-map .pin-label text { font-size: 17px; y: -32px; }
   .hero-photo { background-position: 61% center; }
   .hero h1 { font-size: clamp(54px, 17vw, 78px); }
   .hero-location { display: none; }
