@@ -273,9 +273,6 @@ main { min-height: 70vh; }
 .pin-label text { fill: var(--dark); font: 700 11px Arial, sans-serif; text-anchor: middle; letter-spacing: .01em; }
 .map-pin:hover .pin-label, .map-pin:focus .pin-label, .map-pin:focus-visible .pin-label { opacity: 1; }
 .map-pin:focus-visible .pin-ring { stroke: var(--paper); stroke-width: 3; }
-.regional-inset .inset-frame { fill: #1a2d14; stroke: rgba(246,246,245,.24); stroke-width: 1.5; }
-.regional-inset .inset-land { fill: #24411d; stroke: rgba(246,246,245,.14); stroke-width: 1.5; }
-.regional-inset .inset-title { fill: rgba(246,246,245,.7); font: 700 12px Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
 
 .story-layout { display: grid; grid-template-columns: 1fr 1fr; }
 .story-photo { min-height: 650px; }
