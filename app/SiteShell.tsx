@@ -64,20 +64,74 @@ function Footer({ language }: { language: Language }) {
 
 function HomePage({ language }: { language: Language }) {
   const t = content[language];
+  const schedule = {
+    hu: {
+      title: "Itt találkozhatsz velünk legközelebb",
+      events: [
+        ["Július 30. – augusztus 2.", "Méra World Music Fesztivál"],
+        ["Augusztus 9–15.", "Mezőségi Népzene- és Néptánctábor"],
+        ["Augusztus 19.", "Kolozsvári Magyar Napok · #főtér 23"],
+        ["Augusztus 20.", "Kolozsvári Magyar Napok · REFO udvar"],
+        ["Augusztus 21–23.", "Kolozsvári Magyar Napok · Folkudvar"],
+        ["Szeptember 4–6.", "Erdélyi Táncháztalálkozó"],
+        ["November 27–29.", "Kolozsvári Népzene- és Néptánctalálkozó"],
+      ],
+    },
+    ro: {
+      title: "Următoarele concerte",
+      events: [
+        ["30 iulie – 2 august", "Festivalul Méra World Music"],
+        ["9–15 august", "Tabăra de Muzică și Dans Popular din Câmpia Transilvaniei"],
+        ["19 august", "Zilele Culturale Maghiare din Cluj · #Piața Unirii 23"],
+        ["20 august", "Zilele Culturale Maghiare din Cluj · Curtea REFO"],
+        ["21–23 august", "Zilele Culturale Maghiare din Cluj · Folkudvar"],
+        ["4–6 septembrie", "Întâlnirea Caselor de Dans din Transilvania"],
+        ["27–29 noiembrie", "Întâlnirea de Muzică și Dans Popular din Cluj"],
+      ],
+    },
+    en: {
+      title: "See us live next",
+      events: [
+        ["30 July – 2 August", "Méra World Music Festival"],
+        ["9–15 August", "Transylvanian Plain Folk Music and Dance Camp"],
+        ["19 August", "Hungarian Cultural Days of Cluj · Main Square 23"],
+        ["20 August", "Hungarian Cultural Days of Cluj · REFO Courtyard"],
+        ["21–23 August", "Hungarian Cultural Days of Cluj · Folk Courtyard"],
+        ["4–6 September", "Transylvanian Dance House Meeting"],
+        ["27–29 November", "Cluj Folk Music and Dance Meeting"],
+      ],
+    },
+  }[language];
   return (
-    <section className="hero">
-      <div className="hero-photo" aria-hidden="true" />
-      <div className="hero-shade" aria-hidden="true" />
-      <div className="hero-content">
-        <h1>{t.home.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1>
-        <p className="hero-intro">{t.home.intro}</p>
-        <div className="hero-actions">
-          <a className="button button-primary" href={pageHref(language, "music")}>{t.common.listen} <span>↗</span></a>
-          <a className="button button-ghost" href={pageHref(language, "media")}>{t.nav.media}</a>
+    <>
+      <section className="hero">
+        <div className="hero-photo" aria-hidden="true" />
+        <div className="hero-shade" aria-hidden="true" />
+        <div className="hero-content">
+          <h1>{t.home.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1>
+          <p className="hero-intro">{t.home.intro}</p>
+          <div className="hero-actions">
+            <a className="button button-primary" href={pageHref(language, "music")}>{t.common.listen} <span>↗</span></a>
+            <a className="button button-ghost" href={pageHref(language, "media")}>{t.nav.media}</a>
+          </div>
         </div>
-      </div>
-      <p className="hero-location">{t.common.location}</p>
-    </section>
+        <p className="hero-location">{t.common.location}</p>
+      </section>
+      <section className="schedule-section" aria-labelledby="schedule-title">
+        <div className="schedule-heading">
+          <p className="eyebrow">2026</p>
+          <h2 id="schedule-title">{schedule.title}</h2>
+        </div>
+        <div className="schedule-list">
+          {schedule.events.map(([date, event]) => (
+            <article key={`${date}-${event}`}>
+              <time>{date}</time>
+              <h3>{event}</h3>
+            </article>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
 
