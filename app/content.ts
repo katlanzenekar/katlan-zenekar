@@ -71,8 +71,7 @@ export const content = {
     music: {
       eyebrow: "Repertoár",
       title: "Zene",
-      lead:
-        "Kárpát-medencei népzene, bluegrass, country és saját dalok.",
+      lead: "Katlan — Lenyomat (2025).",
       genres: [
         { number: "01", title: "Kárpát-medence", text: "Magyar, román és cigány népzene." },
         { number: "02", title: "Amerikai népzene", text: "Bluegrass és country." },
@@ -127,8 +126,7 @@ export const content = {
     music: {
       eyebrow: "Repertoriu",
       title: "Muzică",
-      lead:
-        "Muzică din Bazinul Carpatic, bluegrass, country și piese proprii.",
+      lead: "Katlan — Lenyomat (2025).",
       genres: [
         { number: "01", title: "Bazinul Carpatic", text: "Muzică maghiară, românească și romă." },
         { number: "02", title: "Muzică americană", text: "Bluegrass și country." },
@@ -183,8 +181,7 @@ export const content = {
     music: {
       eyebrow: "Repertoire",
       title: "Music",
-      lead:
-        "Music from the Carpathian Basin, bluegrass, country and original songs.",
+      lead: "Katlan — Lenyomat (2025).",
       genres: [
         { number: "01", title: "Carpathian Basin", text: "Hungarian, Romanian and Roma folk music." },
         { number: "02", title: "American folk", text: "Bluegrass and country." },
