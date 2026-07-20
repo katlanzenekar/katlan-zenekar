@@ -92,33 +92,19 @@ function HomePage({ language }: { language: Language }) {
 }
 
 function MusicPage({ language }: { language: Language }) {
-  const t = content[language];
   return (
-    <>
-      <section className="music-hero">
-        <div className="music-hero-copy">
-          <p className="eyebrow">{t.music.eyebrow}</p>
-          <h1>{t.music.title}</h1>
-          <div className="platform-links" aria-label="Music links">
-            <a href="https://open.spotify.com/artist/62JgFukLV2i7kE4zq0lJq5" target="_blank" rel="noreferrer">Spotify ↗</a>
-            <a href="https://www.youtube.com/watch?v=e7xBDxF_ufQ" target="_blank" rel="noreferrer">YouTube ↗</a>
-            <a href="https://linktr.ee/katlanzenekar1" target="_blank" rel="noreferrer">Linktree ↗</a>
-          </div>
-        </div>
-        <div className="music-hero-image">
-          <img src="/katlan-zenekar/media/Katlan-2048-241212PIT-385.webp" alt="A Katlan zenekar koncerten" />
-        </div>
-      </section>
-      <section className="player-section">
-        <div className="player-heading">
-          <p className="eyebrow">Spotify · YouTube</p>
-          <h2>{t.music.playerTitle}</h2>
-        </div>
+    <section className="music-page">
+      <div className="platform-links" aria-label="Music links">
+        <a href="https://open.spotify.com/album/03hWqmfJj0hGY8cBVP7b2y" target="_blank" rel="noreferrer">Spotify ↗</a>
+        <a href="https://music.apple.com/hu/album/lenyomat/1812287150" target="_blank" rel="noreferrer">Apple Music ↗</a>
+        <a href="https://www.youtube.com/watch?v=e7xBDxF_ufQ" target="_blank" rel="noreferrer">YouTube ↗</a>
+        <a href="https://linktr.ee/katlanzenekar1" target="_blank" rel="noreferrer">Minden link ↗</a>
+      </div>
         <div className="players-grid">
           <iframe
             className="spotify-player"
-            title="Katlan on Spotify"
-            src="https://open.spotify.com/embed/artist/62JgFukLV2i7kE4zq0lJq5?utm_source=generator&theme=0"
+            title="Katlan — Lenyomat Spotify"
+            src="https://open.spotify.com/embed/album/03hWqmfJj0hGY8cBVP7b2y?utm_source=generator&theme=0"
             width="100%"
             height="352"
             allowFullScreen
@@ -135,8 +121,7 @@ function MusicPage({ language }: { language: Language }) {
             />
           </div>
         </div>
-      </section>
-    </>
+    </section>
   );
 }
 
