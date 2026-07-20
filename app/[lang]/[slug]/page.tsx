@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const page = pageFromSlug(lang, slug);
   if (!page) return {};
   const title = content[lang].nav[page];
-  const description = page === "about" ? content[lang].about.lead : page === "music" ? content[lang].music.lead : content[lang].contact.lead;
+  const description = page === "about" ? content[lang].about.text : page === "music" ? content[lang].music.lead : page === "media" ? content[lang].home.intro : content[lang].contact.lead;
   return { title, description };
 }
 

@@ -2,21 +2,21 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://katlanzenekar.com"),
+  metadataBase: new URL("https://katlanzenekar.github.io/katlan-zenekar/"),
   title: {
     default: "Katlan — Kolozsvár",
     template: "%s | Katlan",
   },
   description:
-    "Kárpát-medencei népzene, bluegrass és country — frissen, pimaszul, autentikusan Kolozsvárról.",
+    "Kárpát-medencei népzene és amerikai bluegrass.",
   openGraph: {
     type: "website",
     locale: "hu_HU",
     siteName: "Katlan",
-    images: [{ url: "/images/katlan-og.webp", width: 1200, height: 630 }],
+    images: [{ url: "/katlan-zenekar/images/katlan-og.webp", width: 1200, height: 630 }],
   },
   icons: {
-    icon: "/images/katlan-logo-dark.svg",
+    icon: "/katlan-zenekar/images/katlan-logo-dark.svg",
   },
   other: {
     "theme-color": "#f6a000",
