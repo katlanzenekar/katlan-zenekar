@@ -90,7 +90,7 @@ function MusicPage({ language }: { language: Language }) {
           <p className="eyebrow">Katlan · 2025</p>
           <h1>Lenyomat</h1>
           <div className="platform-links" aria-label="Lenyomat album links">
-            <a className="spotify-link" href="https://open.spotify.com/album/03hWqmfJj0hGY8cBVP7b2y" target="_blank" rel="noreferrer">Lenyomat a Spotify-on ↗</a>
+            <a href="https://open.spotify.com/album/03hWqmfJj0hGY8cBVP7b2y" target="_blank" rel="noreferrer">Spotify ↗</a>
             <a href="https://music.apple.com/hu/album/lenyomat/1812287150" target="_blank" rel="noreferrer">Apple Music ↗</a>
             <a href="https://youtube.com/playlist?list=OLAK5uy_lHEmtAHw8amy3Vv-iwWw0ro9qGgKuyLco" target="_blank" rel="noreferrer">YouTube Music ↗</a>
             <a href="https://music.amazon.com/albums/B0F7FKLCL1" target="_blank" rel="noreferrer">Amazon Music ↗</a>
