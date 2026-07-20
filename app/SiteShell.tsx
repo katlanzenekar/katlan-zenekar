@@ -174,9 +174,9 @@ function MusicPage({ language }: { language: Language }) {
 function AboutPage({ language }: { language: Language }) {
   const t = content[language];
   const mapCopy = {
-    hu: { title: "Ahol már játszottunk", count: "27 helyszín · 4 ország", region: "Kárpát-medence" },
-    ro: { title: "Unde am cântat", count: "27 de locuri · 4 țări", region: "Bazinul Carpatic" },
-    en: { title: "Where we've played", count: "27 places · 4 countries", region: "Carpathian Basin" },
+    hu: { title: "Ahol már játszottunk", count: "27 helyszín · 4 ország", region: "Kárpát-medence", pan: "Interaktív térkép. Mobilon húzd oldalra, billentyűzettel használd a nyilakat." },
+    ro: { title: "Unde am cântat", count: "27 de locuri · 4 țări", region: "Bazinul Carpatic", pan: "Hartă interactivă. Glisează lateral pe mobil sau folosește săgețile tastaturii." },
+    en: { title: "Where we've played", count: "27 places · 4 countries", region: "Carpathian Basin", pan: "Interactive map. Swipe sideways on mobile or use the keyboard arrow keys." },
   }[language];
   const pin = (x: number, y: number, label: string) => (
     <g className="map-pin" transform={`translate(${x} ${y})`} tabIndex={0} role="img" aria-label={label} key={label}>
@@ -215,7 +215,7 @@ function AboutPage({ language }: { language: Language }) {
           <p className="eyebrow light">{mapCopy.count}</p>
           <h2 id="tour-map-title">{mapCopy.title}</h2>
         </div>
-        <div className="map-canvas">
+        <div className="map-canvas" tabIndex={0} role="region" aria-label={mapCopy.pan}>
           <svg className="desktop-tour-map" viewBox="0 0 1200 560" role="img" aria-labelledby="map-svg-title map-svg-desc">
             <title id="map-svg-title">{mapCopy.title}</title>
             <desc id="map-svg-desc">27 locations across Romania, Hungary, Germany and the United States.</desc>
@@ -355,8 +355,9 @@ export function SiteShell({ language, page }: { language: Language; page: PageKe
   return (
     <>
       <LanguageSync language={language} />
+      <a className="skip-link" href="#main-content">{language === "hu" ? "Ugrás a tartalomhoz" : language === "ro" ? "Sari la conținut" : "Skip to content"}</a>
       <Header language={language} page={page} />
-      <main>
+      <main id="main-content">
         {page === "home" && <HomePage language={language} />}
         {page === "about" && <AboutPage language={language} />}
         {page === "music" && <MusicPage language={language} />}
