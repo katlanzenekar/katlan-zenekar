@@ -65,29 +65,19 @@ function Footer({ language }: { language: Language }) {
 function HomePage({ language }: { language: Language }) {
   const t = content[language];
   return (
-    <>
-      <section className="hero">
-        <div className="hero-photo" aria-hidden="true" />
-        <div className="hero-shade" aria-hidden="true" />
-        <div className="hero-content">
-          <h1>{t.home.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1>
-          <p className="hero-intro">{t.home.intro}</p>
-          <div className="hero-actions">
-            <a className="button button-primary" href={pageHref(language, "music")}>{t.common.listen} <span>↗</span></a>
-            <a className="button button-ghost" href={pageHref(language, "media")}>{t.nav.media}</a>
-          </div>
+    <section className="hero">
+      <div className="hero-photo" aria-hidden="true" />
+      <div className="hero-shade" aria-hidden="true" />
+      <div className="hero-content">
+        <h1>{t.home.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1>
+        <p className="hero-intro">{t.home.intro}</p>
+        <div className="hero-actions">
+          <a className="button button-primary" href={pageHref(language, "music")}>{t.common.listen} <span>↗</span></a>
+          <a className="button button-ghost" href={pageHref(language, "media")}>{t.nav.media}</a>
         </div>
-        <p className="hero-location">{t.common.location}</p>
-      </section>
-      <section className="home-music">
-        <div className="photo-window"><img src="/katlan-zenekar/media/554101546-727746720310646-7773571306944070569-n.webp" alt="Katlan koncert közben" /></div>
-        <div className="home-music-copy">
-          <h2>{t.nav.music}</h2>
-          <p>{t.music.lead}</p>
-          <a className="text-link" href={pageHref(language, "music")}>{t.common.listen} <span>↗</span></a>
-        </div>
-      </section>
-    </>
+      </div>
+      <p className="hero-location">{t.common.location}</p>
+    </section>
   );
 }
 
