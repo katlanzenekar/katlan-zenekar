@@ -216,7 +216,7 @@ function AboutPage({ language }: { language: Language }) {
           <h2 id="tour-map-title">{mapCopy.title}</h2>
         </div>
         <div className="map-canvas">
-          <svg viewBox="0 0 1200 560" role="img" aria-labelledby="map-svg-title map-svg-desc">
+          <svg className="desktop-tour-map" viewBox="0 0 1200 560" role="img" aria-labelledby="map-svg-title map-svg-desc">
             <title id="map-svg-title">{mapCopy.title}</title>
             <desc id="map-svg-desc">27 locations across Romania, Hungary, Germany and the United States.</desc>
             <g className="continents">
@@ -266,6 +266,36 @@ function AboutPage({ language }: { language: Language }) {
               {pin(353, 176, "Zabola")}
             </g>
           </svg>
+          <div className="mobile-map-stack">
+            <svg className="mobile-world-map" viewBox="0 0 720 300" role="img" aria-label={mapCopy.title}>
+              <g className="continents">
+                <path d="M30 75L78 38l98-9 79 38 25 55-48 28-48 69-91-29-32-54z" />
+                <path d="M350 55l64-29 116 10 64 34 93 2-36 63-91 6-57 42-86-27-77-47z" />
+                <path d="M438 164l70 17 25 56-45 44-49-35-23-50z" />
+              </g>
+              <g className="routes"><path d="M430 108 Q330 20 186 122" /><path d="M430 108 Q421 67 392 84" /></g>
+              {pin(155, 119, "Denver")}
+              {pin(197, 151, "Nashville")}
+              {pin(207, 137, "Clay City")}
+              {pin(217, 131, "Lexington")}
+              {pin(393, 104, "Stuttgart")}
+              {pin(403, 92, "München")}
+              {pin(410, 72, "Berlin")}
+              <g className="map-point origin"><circle cx="430" cy="108" r="7" /><circle cx="430" cy="108" r="15" /></g>
+            </svg>
+            <svg className="mobile-region-map" viewBox="0 0 405 240" role="img" aria-label={mapCopy.region}>
+              <rect className="inset-frame" width="405" height="240" rx="18" />
+              <path className="inset-land" d="M35 91l54-38 79 14 52-22 76 21 65 45-18 77-90 25-92-10-79 19-55-58z" />
+              <text className="inset-title" x="22" y="32">{mapCopy.region}</text>
+              {pin(110, 100, "Budapest")}{pin(48, 135, "Magyarföld")}{pin(122, 87, "Nagymaros")}
+              {pin(96, 86, "Piliscsaba")}{pin(88, 154, "Balatonszárszó")}{pin(170, 104, "Nagyvárad")}
+              {pin(182, 78, "Szatmárnémeti")}{pin(230, 110, "Kolozsvár")}{pin(247, 91, "Szamosújvár")}
+              {pin(252, 105, "Válaszút")}{pin(217, 100, "Méra")}{pin(277, 132, "Marosvásárhely")}
+              {pin(225, 132, "Torockó")}{pin(244, 145, "Csombord")}{pin(304, 126, "Székelyudvarhely")}
+              {pin(314, 139, "Lengyelfalva")}{pin(336, 119, "Csíkszereda")}{pin(346, 99, "Balánbánya")}
+              {pin(329, 163, "Sepsiszentgyörgy")}{pin(353, 176, "Zabola")}
+            </svg>
+          </div>
         </div>
       </section>
     </>
