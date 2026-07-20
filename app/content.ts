@@ -56,7 +56,7 @@ export const content = {
         "Kárpát-medencei népzene és amerikai bluegrass.",
     },
     about: {
-      text: "A kolozsvári Katlan zenekar egy fiatal népzenészből álló formáció, amely a zene fiatalos, pimasz, ugyanakkor autentikus és hagyományos megfogalmazására törekszik. Céljuk a kárpát-medencei magyar, román és cigány népzene népszerűsítése mellett az amerikai népzene legautentikusabb megszólaltatása.",
+      text: "A kolozsvári Katlan zenekar egy fiatal népzenészekből álló formáció, amely a zene fiatalos, pimasz, ugyanakkor autentikus és hagyományos megfogalmazására törekszik. Céljuk a kárpát-medencei magyar, román és cigány népzene népszerűsítése mellett az amerikai népzene legautentikusabb megszólaltatása.",
       eyebrow: "A zenekar",
       title: "A zenekar",
       lead:
