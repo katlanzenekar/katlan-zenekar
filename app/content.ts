@@ -12,7 +12,7 @@ export const paths: Record<Language, Record<PageKey, string>> = {
 };
 
 export const pageHref = (language: Language, page: PageKey) =>
-  `/katlan-zenekar/${language}${paths[language][page] ? `/${paths[language][page]}` : ""}`;
+  `/katlan-zenekar/${language}${paths[language][page] ? `/${paths[language][page]}` : ""}/`;
 
 export const pageFromSlug = (language: Language, slug: string): PageKey | null => {
   const match = (Object.entries(paths[language]) as [PageKey, string][]).find(
