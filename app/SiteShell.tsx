@@ -173,27 +173,86 @@ function MusicPage({ language }: { language: Language }) {
 
 function AboutPage({ language }: { language: Language }) {
   const t = content[language];
+  const mapCopy = {
+    hu: { title: "Ahol már játszottunk", count: "27 helyszín · 4 ország", countries: ["Románia", "Magyarország", "Németország", "Egyesült Államok"] },
+    ro: { title: "Unde am cântat", count: "27 de locuri · 4 țări", countries: ["România", "Ungaria", "Germania", "Statele Unite"] },
+    en: { title: "Where we've played", count: "27 places · 4 countries", countries: ["Romania", "Hungary", "Germany", "United States"] },
+  }[language];
+  const regions = [
+    {
+      code: "RO", count: 15, country: mapCopy.countries[0],
+      places: "Székelyudvarhely, Lengyelfalva, Csíkszereda, Sepsiszentgyörgy, Kolozsvár, Marosvásárhely, Balánbánya, Méra, Válaszút, Szamosújvár, Torockó, Csombord, Nagyvárad, Zabola, Szatmárnémeti",
+    },
+    {
+      code: "HU", count: 5, country: mapCopy.countries[1],
+      places: "Budapest, Magyarföld, Nagymaros, Piliscsaba, Balatonszárszó",
+    },
+    { code: "DE", count: 3, country: mapCopy.countries[2], places: "Stuttgart, Berlin, München" },
+    { code: "US", count: 4, country: mapCopy.countries[3], places: "Clay City, Lexington, Nashville, Denver" },
+  ];
   return (
-    <section className="about-simple">
-      <div className="about-image">
-        <img src="/katlan-zenekar/media/Katlan-2048-241212PIT-376.webp" alt="A Katlan zenekar koncerten" />
-      </div>
-      <div className="about-copy">
-        <h1>{t.nav.about}</h1>
-        <p>{t.about.text}</p>
-        <div className="about-members">
-          <h2>{t.about.membersTitle}</h2>
-          <div>
-            {t.about.members.map((member) => (
-              <article key={member.name}>
-                <h3>{member.name}</h3>
-                <p>{member.instrument}</p>
-              </article>
-            ))}
+    <>
+      <section className="about-simple">
+        <div className="about-image">
+          <img src="/katlan-zenekar/media/Katlan-2048-241212PIT-376.webp" alt="A Katlan zenekar koncerten" />
+        </div>
+        <div className="about-copy">
+          <h1>{t.nav.about}</h1>
+          <p>{t.about.text}</p>
+          <div className="about-members">
+            <h2>{t.about.membersTitle}</h2>
+            <div>
+              {t.about.members.map((member) => (
+                <article key={member.name}>
+                  <h3>{member.name}</h3>
+                  <p>{member.instrument}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section className="tour-map" aria-labelledby="tour-map-title">
+        <div className="tour-map-heading">
+          <p className="eyebrow light">{mapCopy.count}</p>
+          <h2 id="tour-map-title">{mapCopy.title}</h2>
+        </div>
+        <div className="map-canvas">
+          <svg viewBox="0 0 1200 560" role="img" aria-labelledby="map-svg-title map-svg-desc">
+            <title id="map-svg-title">{mapCopy.title}</title>
+            <desc id="map-svg-desc">27 locations across Romania, Hungary, Germany and the United States.</desc>
+            <g className="continents">
+              <path d="M65 116L122 70l91-22 86 23 55 54-23 36-46 10-28 53-52 25-35-40-45-8-35-43z" />
+              <path d="M285 282l53 26 31 58-19 67-31 76-28-20-9-72-35-72z" />
+              <path d="M527 91l64-36 143 5 98 41 91-3 107 43-28 51-105 5-50 34-76-16-60 24-52-38-60 4-56-44z" />
+              <path d="M621 233l80 13 53 56-15 106-60 83-46-51-16-91-42-63z" />
+              <path d="M941 358l70-24 85 38-12 72-74 24-70-42z" />
+              <path d="M1096 246l28-13 28 16-22 18z" />
+            </g>
+            <g className="routes">
+              <path d="M691 169 Q665 115 630 145" />
+              <path d="M691 169 Q674 153 654 169" />
+              <path d="M691 169 Q500 30 302 185" />
+              <path d="M691 169 Q475 72 265 210" />
+            </g>
+            <g className="map-point origin"><circle cx="691" cy="169" r="9" /><circle cx="691" cy="169" r="20" /></g>
+            <g className="map-marker" transform="translate(704 184)"><rect width="72" height="34" rx="17"/><text x="36" y="22">RO · 15</text></g>
+            <g className="map-marker" transform="translate(606 170)"><rect width="64" height="34" rx="17"/><text x="32" y="22">HU · 5</text></g>
+            <g className="map-marker" transform="translate(584 111)"><rect width="64" height="34" rx="17"/><text x="32" y="22">DE · 3</text></g>
+            <g className="map-marker" transform="translate(231 177)"><rect width="64" height="34" rx="17"/><text x="32" y="22">US · 4</text></g>
+          </svg>
+        </div>
+        <div className="map-regions">
+          {regions.map((region) => (
+            <article key={region.code}>
+              <div><span>{region.code}</span><strong>{region.count}</strong></div>
+              <h3>{region.country}</h3>
+              <p>{region.places}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
 
