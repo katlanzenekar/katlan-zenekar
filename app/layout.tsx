@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://katlanzenekar.github.io/katlan-zenekar/"),
+  metadataBase: new URL("https://katlanzenekar.github.io/"),
   title: {
     default: "Katlan — Kolozsvár",
     template: "%s | Katlan",
