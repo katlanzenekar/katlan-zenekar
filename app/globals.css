@@ -243,11 +243,20 @@ main { min-height: 70vh; }
 .genres-section span { color: var(--muted); font-size: 11px; }
 .genres-section h2 { margin: auto 0 18px; font-size: clamp(30px, 3vw, 45px); font-weight: 500; letter-spacing: -.03em; }
 .genres-section p { margin: 0; color: var(--muted); }
-.music-page { min-height: 100svh; padding: 120px clamp(20px, 5vw, 76px) clamp(54px, 7vw, 92px); background: var(--paper); }
-.music-page .platform-links { margin: 0 0 clamp(28px, 4vw, 48px); }
+.music-page { min-height: 100svh; padding: 76px 0 0; background: var(--dark); color: var(--paper); }
 .music-page iframe { border: 0; border-radius: 16px; }
-.players-grid { display: grid; grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr); gap: clamp(18px, 2.5vw, 36px); align-items: start; }
-.spotify-player { min-height: 352px; }
+.album-feature { display: grid; grid-template-columns: minmax(300px, .9fr) minmax(360px, 1.1fr); gap: clamp(44px, 8vw, 130px); align-items: center; padding: clamp(46px, 7vw, 100px) clamp(24px, 7vw, 110px); background: #1a2b12; }
+.album-cover { width: 100%; max-width: 620px; aspect-ratio: 1; object-fit: cover; border-radius: 4px; box-shadow: 0 24px 70px rgba(0,0,0,.28); }
+.album-copy { width: 100%; max-width: 720px; }
+.album-copy h1 { margin: 20px 0 34px; color: var(--accent); font-family: "Coastal Hand", Arial, sans-serif; font-size: clamp(72px, 9vw, 142px); font-weight: 400; line-height: .82; letter-spacing: 0; }
+.album-copy .eyebrow { color: rgba(246,246,245,.62); }
+.album-copy .platform-links { margin: 0 0 30px; }
+.album-copy .platform-links a, .music-video-block .platform-links a { border-color: rgba(246,246,245,.4); color: var(--paper); }
+.album-copy .platform-links a:hover, .music-video-block .platform-links a:hover { background: var(--accent); color: var(--dark); }
+.spotify-player { display: block; min-height: 152px; background: #121212; }
+.music-video-block { padding: clamp(54px, 8vw, 110px) clamp(24px, 7vw, 110px); }
+.music-video-block .video-frame { width: 100%; max-width: 1400px; margin: 0 auto; }
+.music-video-block .platform-links { max-width: 1400px; margin: 24px auto 0; }
 .music-video { min-height: 0; aspect-ratio: 16 / 9; }
 
 .media-header {
@@ -322,7 +331,8 @@ main { min-height: 70vh; }
   .genres-section article { min-height: 270px; border-right: 0; border-bottom: 1px solid var(--line); }
   .contact-image { min-height: 520px; }
   .video-grid { grid-template-columns: 1fr; }
-  .players-grid { grid-template-columns: 1fr; }
+  .album-feature { grid-template-columns: 1fr; }
+  .album-cover, .album-copy { max-width: 680px; margin-inline: auto; }
 }
 
 @media (max-width: 600px) {
@@ -350,6 +360,10 @@ main { min-height: 70vh; }
   .music-hero h1 { font-size: clamp(70px, 24vw, 110px); }
   .music-hero-image { min-height: 52svh; }
   .platform-links { margin-top: 30px; }
+  .album-feature { padding: 34px 20px 58px; gap: 38px; }
+  .album-copy h1 { margin-bottom: 28px; font-size: clamp(68px, 24vw, 106px); }
+  .album-copy .platform-links { margin-top: 0; }
+  .music-video-block { padding: 48px 12px 64px; }
   .story-photo { min-height: 400px; }
   .story-copy, .members-section, .player-section, .contact-copy { padding-inline: 20px; }
   .members-list article { grid-template-columns: 36px 1fr; gap: 10px; }

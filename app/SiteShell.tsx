@@ -84,33 +84,42 @@ function HomePage({ language }: { language: Language }) {
 function MusicPage({ language }: { language: Language }) {
   return (
     <section className="music-page">
-      <div className="platform-links" aria-label="Music links">
-        <a href="https://open.spotify.com/album/03hWqmfJj0hGY8cBVP7b2y" target="_blank" rel="noreferrer">Spotify ↗</a>
-        <a href="https://music.apple.com/hu/album/lenyomat/1812287150" target="_blank" rel="noreferrer">Apple Music ↗</a>
-        <a href="https://www.youtube.com/watch?v=e7xBDxF_ufQ" target="_blank" rel="noreferrer">YouTube ↗</a>
-        <a href="https://linktr.ee/katlanzenekar1" target="_blank" rel="noreferrer">Minden link ↗</a>
-      </div>
-        <div className="players-grid">
+      <article className="album-feature">
+        <img className="album-cover" src="/katlan-zenekar/images/lenyomat-cover.webp" alt="Katlan — Lenyomat album borító" />
+        <div className="album-copy">
+          <p className="eyebrow">Katlan · 2025</p>
+          <h1>Lenyomat</h1>
+          <div className="platform-links" aria-label="Lenyomat album links">
+            <a href="https://open.spotify.com/album/03hWqmfJj0hGY8cBVP7b2y" target="_blank" rel="noreferrer">Spotify ↗</a>
+            <a href="https://music.apple.com/hu/album/lenyomat/1812287150" target="_blank" rel="noreferrer">Apple Music ↗</a>
+          </div>
           <iframe
             className="spotify-player"
             title="Katlan — Lenyomat Spotify"
             src="https://open.spotify.com/embed/album/03hWqmfJj0hGY8cBVP7b2y?utm_source=generator&theme=0"
             width="100%"
-            height="352"
+            height="152"
             allowFullScreen
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
           />
-          <div className="video-frame music-video">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/e7xBDxF_ufQ"
-              title="Katlan zenekar — Kalotaszeg"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              loading="lazy"
-            />
-          </div>
         </div>
+      </article>
+      <div className="music-video-block">
+        <div className="video-frame music-video">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/e7xBDxF_ufQ"
+            title="Katlan zenekar — Kalotaszeg"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
+        <div className="platform-links" aria-label="More music links">
+          <a href="https://www.youtube.com/watch?v=e7xBDxF_ufQ" target="_blank" rel="noreferrer">YouTube ↗</a>
+          <a href="https://linktr.ee/katlanzenekar1" target="_blank" rel="noreferrer">Minden link ↗</a>
+        </div>
+      </div>
     </section>
   );
 }
