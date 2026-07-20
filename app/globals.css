@@ -253,6 +253,25 @@ main { min-height: 70vh; }
 .about-members h3 { margin: 0; font-size: clamp(16px, 1.25vw, 19px); font-weight: 600; }
 .about-members article p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.45; letter-spacing: 0; }
 
+.tour-map { padding: clamp(76px, 9vw, 138px) clamp(20px, 5vw, 76px); overflow: hidden; background: #14200e; color: var(--paper); }
+.tour-map-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin: 0 auto 42px; max-width: 1500px; }
+.tour-map-heading h2 { max-width: 820px; margin: 0; color: var(--accent); font-family: "Coastal Hand", Arial, sans-serif; font-size: clamp(58px, 7vw, 108px); font-weight: 400; line-height: .86; }
+.map-canvas { max-width: 1500px; margin: 0 auto; border: 1px solid rgba(246,246,245,.16); border-radius: 20px; background: radial-gradient(circle at 57% 32%, rgba(242,159,5,.12), transparent 29%), #192913; }
+.map-canvas svg { display: block; width: 100%; height: auto; }
+.continents { fill: #20371a; stroke: rgba(246,246,245,.16); stroke-width: 2; stroke-linejoin: round; }
+.routes { fill: none; stroke: var(--sand); stroke-width: 2; stroke-dasharray: 7 9; opacity: .72; }
+.map-point circle:first-child { fill: var(--accent); }
+.map-point circle:last-child { fill: none; stroke: var(--accent); stroke-width: 2; opacity: .4; }
+.map-marker rect { fill: var(--accent); }
+.map-marker text { fill: var(--dark); font: 700 12px Arial, sans-serif; text-anchor: middle; letter-spacing: .04em; }
+.map-regions { max-width: 1500px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 26px auto 0; border-top: 1px solid rgba(246,246,245,.18); }
+.map-regions article { padding: 28px 26px 8px 0; }
+.map-regions article + article { padding-left: 26px; border-left: 1px solid rgba(246,246,245,.18); }
+.map-regions article > div { display: flex; align-items: center; justify-content: space-between; color: var(--accent); font-size: 11px; letter-spacing: .12em; }
+.map-regions strong { font-size: 24px; font-weight: 400; }
+.map-regions h3 { margin: 22px 0 10px; font-size: 19px; font-weight: 600; }
+.map-regions p { margin: 0; color: rgba(246,246,245,.64); font-size: 13px; line-height: 1.65; }
+
 .story-layout { display: grid; grid-template-columns: 1fr 1fr; }
 .story-photo { min-height: 650px; }
 .story-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 56% center; }
@@ -355,6 +374,9 @@ main { min-height: 70vh; }
   .about-simple { grid-template-columns: 1fr; }
   .schedule-section { grid-template-columns: 1fr; }
   .about-image, .about-image img { min-height: 58svh; }
+  .map-regions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .map-regions article:nth-child(3) { padding-left: 0; border-left: 0; border-top: 1px solid rgba(246,246,245,.18); }
+  .map-regions article:nth-child(4) { border-top: 1px solid rgba(246,246,245,.18); }
   .page-hero > .eyebrow { grid-column: 1; }
   .home-music, .story-layout, .contact-page { grid-template-columns: 1fr; }
   .genres-section { grid-template-columns: 1fr; }
@@ -376,6 +398,13 @@ main { min-height: 70vh; }
   .about-copy { padding: 56px 20px 72px; }
   .about-simple h1 { margin-bottom: 28px; }
   .about-members article { grid-template-columns: 1fr; gap: 3px; }
+  .tour-map { padding: 64px 12px 72px; }
+  .tour-map-heading { display: block; padding-inline: 8px; }
+  .tour-map-heading h2 { margin-top: 18px; }
+  .map-canvas { overflow: hidden; border-radius: 14px; }
+  .map-canvas svg { width: 185%; transform: translateX(-29%); }
+  .map-regions { grid-template-columns: 1fr; }
+  .map-regions article, .map-regions article + article { padding: 24px 8px; border-left: 0; border-top: 1px solid rgba(246,246,245,.18); }
   .hero-photo { background-position: 61% center; }
   .hero-content { width: 100%; padding: 120px 20px 58px; }
   .hero h1 { font-size: clamp(54px, 17vw, 78px); }
