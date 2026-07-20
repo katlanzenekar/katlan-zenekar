@@ -31,6 +31,7 @@ body {
 }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 
 .hero h1,
 .music-hero h1,
@@ -250,11 +251,10 @@ main { min-height: 70vh; }
 .album-copy { width: 100%; max-width: 720px; }
 .album-copy h1 { margin: 20px 0 34px; color: var(--accent); font-family: "Coastal Hand", Arial, sans-serif; font-size: clamp(72px, 9vw, 142px); font-weight: 400; line-height: .82; letter-spacing: 0; }
 .album-copy .eyebrow { color: rgba(246,246,245,.62); }
-.album-copy .platform-links { margin: 0 0 30px; }
+.album-copy .platform-links { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin: 0; }
 .album-copy .platform-links a, .music-video-block .platform-links a { border-color: rgba(246,246,245,.4); color: var(--paper); }
 .album-copy .platform-links a:hover, .music-video-block .platform-links a:hover { background: var(--accent); color: var(--dark); }
-.album-copy .platform-links .spotify-link { border-color: #1ed760; background: #1ed760; color: #101b0b; }
-.album-copy .platform-links .spotify-link:hover { border-color: var(--paper); background: var(--paper); }
+.album-copy .platform-links a { min-height: 48px; display: flex; align-items: center; justify-content: center; padding-inline: 10px; text-align: center; }
 .music-video-block { padding: clamp(54px, 8vw, 110px) clamp(24px, 7vw, 110px); }
 .music-video-block .video-frame { width: 100%; max-width: 1400px; margin: 0 auto; }
 .music-video-block .platform-links { max-width: 1400px; margin: 24px auto 0; }
@@ -334,6 +334,7 @@ main { min-height: 70vh; }
   .video-grid { grid-template-columns: 1fr; }
   .album-feature { grid-template-columns: 1fr; }
   .album-cover, .album-copy { max-width: 680px; margin-inline: auto; }
+  .album-copy .platform-links { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 @media (max-width: 600px) {
@@ -364,6 +365,7 @@ main { min-height: 70vh; }
   .album-feature { padding: 34px 20px 58px; gap: 38px; }
   .album-copy h1 { margin-bottom: 28px; font-size: clamp(68px, 24vw, 106px); }
   .album-copy .platform-links { margin-top: 0; }
+  .album-copy .platform-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .music-video-block { padding: 48px 12px 64px; }
   .story-photo { min-height: 400px; }
   .story-copy, .members-section, .player-section, .contact-copy { padding-inline: 20px; }
