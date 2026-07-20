@@ -174,22 +174,20 @@ function MusicPage({ language }: { language: Language }) {
 function AboutPage({ language }: { language: Language }) {
   const t = content[language];
   const mapCopy = {
-    hu: { title: "Ahol már játszottunk", count: "27 helyszín · 4 ország", countries: ["Románia", "Magyarország", "Németország", "Egyesült Államok"] },
-    ro: { title: "Unde am cântat", count: "27 de locuri · 4 țări", countries: ["România", "Ungaria", "Germania", "Statele Unite"] },
-    en: { title: "Where we've played", count: "27 places · 4 countries", countries: ["Romania", "Hungary", "Germany", "United States"] },
+    hu: { title: "Ahol már játszottunk", count: "27 helyszín · 4 ország", region: "Kárpát-medence" },
+    ro: { title: "Unde am cântat", count: "27 de locuri · 4 țări", region: "Bazinul Carpatic" },
+    en: { title: "Where we've played", count: "27 places · 4 countries", region: "Carpathian Basin" },
   }[language];
-  const regions = [
-    {
-      code: "RO", count: 15, country: mapCopy.countries[0],
-      places: "Székelyudvarhely, Lengyelfalva, Csíkszereda, Sepsiszentgyörgy, Kolozsvár, Marosvásárhely, Balánbánya, Méra, Válaszút, Szamosújvár, Torockó, Csombord, Nagyvárad, Zabola, Szatmárnémeti",
-    },
-    {
-      code: "HU", count: 5, country: mapCopy.countries[1],
-      places: "Budapest, Magyarföld, Nagymaros, Piliscsaba, Balatonszárszó",
-    },
-    { code: "DE", count: 3, country: mapCopy.countries[2], places: "Stuttgart, Berlin, München" },
-    { code: "US", count: 4, country: mapCopy.countries[3], places: "Clay City, Lexington, Nashville, Denver" },
-  ];
+  const pin = (x: number, y: number, label: string) => (
+    <g className="map-pin" transform={`translate(${x} ${y})`} tabIndex={0} role="img" aria-label={label} key={label}>
+      <circle className="pin-ring" r="10" />
+      <circle className="pin-core" r="4.5" />
+      <g className="pin-label">
+        <rect x="-74" y="-43" width="148" height="29" rx="7" />
+        <text x="0" y="-24">{label}</text>
+      </g>
+    </g>
+  );
   return (
     <>
       <section className="about-simple">
@@ -230,26 +228,44 @@ function AboutPage({ language }: { language: Language }) {
               <path d="M1096 246l28-13 28 16-22 18z" />
             </g>
             <g className="routes">
-              <path d="M691 169 Q665 115 630 145" />
-              <path d="M691 169 Q674 153 654 169" />
-              <path d="M691 169 Q500 30 302 185" />
-              <path d="M691 169 Q475 72 265 210" />
+              <path d="M691 169 Q665 112 624 151" />
+              <path d="M691 169 Q470 20 310 198" />
+              <path d="M691 169 Q445 70 250 184" />
             </g>
             <g className="map-point origin"><circle cx="691" cy="169" r="9" /><circle cx="691" cy="169" r="20" /></g>
-            <g className="map-marker" transform="translate(704 184)"><rect width="72" height="34" rx="17"/><text x="36" y="22">RO · 15</text></g>
-            <g className="map-marker" transform="translate(606 170)"><rect width="64" height="34" rx="17"/><text x="32" y="22">HU · 5</text></g>
-            <g className="map-marker" transform="translate(584 111)"><rect width="64" height="34" rx="17"/><text x="32" y="22">DE · 3</text></g>
-            <g className="map-marker" transform="translate(231 177)"><rect width="64" height="34" rx="17"/><text x="32" y="22">US · 4</text></g>
+            {pin(250, 184, "Denver")}
+            {pin(303, 218, "Nashville")}
+            {pin(310, 200, "Clay City")}
+            {pin(322, 193, "Lexington")}
+            {pin(615, 165, "Stuttgart")}
+            {pin(625, 150, "München")}
+            {pin(633, 130, "Berlin")}
+            <g className="regional-inset" transform="translate(755 282)">
+              <rect className="inset-frame" width="405" height="240" rx="18" />
+              <path className="inset-land" d="M35 91l54-38 79 14 52-22 76 21 65 45-18 77-90 25-92-10-79 19-55-58z" />
+              <text className="inset-title" x="22" y="32">{mapCopy.region}</text>
+              {pin(110, 100, "Budapest")}
+              {pin(48, 135, "Magyarföld")}
+              {pin(122, 87, "Nagymaros")}
+              {pin(96, 86, "Piliscsaba")}
+              {pin(88, 154, "Balatonszárszó")}
+              {pin(170, 104, "Nagyvárad")}
+              {pin(182, 78, "Szatmárnémeti")}
+              {pin(230, 110, "Kolozsvár")}
+              {pin(247, 91, "Szamosújvár")}
+              {pin(252, 105, "Válaszút")}
+              {pin(217, 100, "Méra")}
+              {pin(277, 132, "Marosvásárhely")}
+              {pin(225, 132, "Torockó")}
+              {pin(244, 145, "Csombord")}
+              {pin(304, 126, "Székelyudvarhely")}
+              {pin(314, 139, "Lengyelfalva")}
+              {pin(336, 119, "Csíkszereda")}
+              {pin(346, 99, "Balánbánya")}
+              {pin(329, 163, "Sepsiszentgyörgy")}
+              {pin(353, 176, "Zabola")}
+            </g>
           </svg>
-        </div>
-        <div className="map-regions">
-          {regions.map((region) => (
-            <article key={region.code}>
-              <div><span>{region.code}</span><strong>{region.count}</strong></div>
-              <h3>{region.country}</h3>
-              <p>{region.places}</p>
-            </article>
-          ))}
         </div>
       </section>
     </>
