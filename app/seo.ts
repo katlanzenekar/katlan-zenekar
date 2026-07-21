@@ -8,12 +8,12 @@ const seo: Record<Language, Record<PageKey, { title: string; description: string
     home: {
       title: "Katlan zenekar | Kolozsvári népzenekar és bluegrass",
       description:
-        "A Katlan kolozsvári népzenekar: magyar, román és cigány népzene, táncházi muzsika és amerikai bluegrass.",
+        "A Katlan fiatal kolozsvári népzenészek zenekara: magyar, román és cigány népzene, erdélyi táncház és amerikai bluegrass.",
     },
     about: {
       title: "Katlan zenekar | Rólunk és a zenekar tagjai",
       description:
-        "A kolozsvári Katlan zenekar bemutatkozása és tagjai. Erdélyi és kárpát-medencei népzene, táncház és amerikai bluegrass.",
+        "A kolozsvári Katlan zenekar bemutatkozása és népzenészei. Kárpát-medencei népzene, erdélyi táncház és amerikai bluegrass.",
     },
     music: {
       title: "Lenyomat – Katlan zenekar | Album és streaming",
@@ -28,7 +28,7 @@ const seo: Record<Language, Record<PageKey, { title: string; description: string
     contact: {
       title: "Katlan zenekar kapcsolat | Koncert- és táncházszervezés",
       description:
-        "A Katlan zenekar elérhetőségei koncert, fesztivál, táncház és együttműködés szervezéséhez.",
+        "A Katlan zenekar elérhetőségei koncert, kolozsvári és erdélyi táncház, táncháztalálkozó, fesztivál és együttműködés szervezéséhez.",
     },
   },
   ro: {
