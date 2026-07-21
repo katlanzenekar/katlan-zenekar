@@ -6,7 +6,7 @@ const siteUrl = "https://katlanzenekar.github.io/katlan-zenekar";
 export const metadata: Metadata = {
   metadataBase: new URL(`${siteUrl}/`),
   title: {
-    default: "Katlan zenekar | Kolozsvári népzene és bluegrass",
+    default: "Katlan zenekar | Kolozsvári népzenekar és bluegrass",
     template: "%s",
   },
   description:
@@ -30,11 +30,14 @@ const musicGroupJsonLd = {
   "@type": "MusicGroup",
   "@id": `${siteUrl}/#musicgroup`,
   name: "Katlan",
+  alternateName: "Katlan Zenekar",
   url: `${siteUrl}/`,
   logo: `${siteUrl}/images/katlan-logo-dark.svg`,
   image: `${siteUrl}/images/katlan-og.webp`,
+  email: "mailto:katlan.zenekar@gmail.com",
+  telephone: "+40755465048",
   description:
-    "Kolozsvári zenekar, amely kárpát-medencei magyar, román és cigány népzenét, valamint amerikai bluegrasst játszik.",
+    "Kolozsvári népzenekar: magyar, román és cigány népzene, táncházi muzsika és amerikai bluegrass.",
   foundingLocation: {
     "@type": "Place",
     name: "Kolozsvár / Cluj-Napoca",
@@ -51,6 +54,14 @@ const musicGroupJsonLd = {
     "Bluegrass",
     "Country",
   ],
+  areaServed: ["Romania", "Hungary", "Europe"],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "booking",
+    email: "katlan.zenekar@gmail.com",
+    telephone: "+40755465048",
+    availableLanguage: ["Hungarian", "Romanian", "English"],
+  },
   member: [
     "Dezső Attila",
     "Szabó Bence",
@@ -65,6 +76,18 @@ const musicGroupJsonLd = {
     datePublished: "2025",
     url: "https://open.spotify.com/album/03hWqmfJj0hGY8cBVP7b2y",
     byArtist: { "@id": `${siteUrl}/#musicgroup` },
+    sameAs: [
+      "https://open.spotify.com/album/03hWqmfJj0hGY8cBVP7b2y",
+      "https://music.apple.com/hu/album/lenyomat/1812287150",
+      "https://youtube.com/playlist?list=OLAK5uy_lHEmtAHw8amy3Vv-iwWw0ro9qGgKuyLco",
+      "https://music.amazon.com/albums/B0F7FKLCL1",
+      "https://tidal.com/album/433753507/u",
+    ],
+  },
+  subjectOf: {
+    "@type": "NewsArticle",
+    headline: "Erdélyi népzenészek a tengerentúlon: hazatért Amerikából a kolozsvári Katlan zenekar",
+    url: "https://maszol.ro/kultura/Erdelyi-nepzeneszek-a-tengerentulon-Hazatert-Amerikabol-a-kolozsvari-Katlan-zenekar-INTERJU",
   },
   sameAs: [
     "https://www.instagram.com/katlan_hivatalos/",
