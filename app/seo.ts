@@ -6,27 +6,27 @@ export const siteUrl = "https://katlanzenekar.github.io/katlan-zenekar";
 const seo: Record<Language, Record<PageKey, { title: string; description: string }>> = {
   hu: {
     home: {
-      title: "Katlan zenekar | Kolozsvári népzene és bluegrass",
+      title: "Katlan zenekar | Kolozsvári népzenekar és bluegrass",
       description:
-        "A kolozsvári Katlan zenekar kárpát-medencei magyar, román és cigány népzenét, valamint amerikai bluegrasst játszik.",
+        "A Katlan kolozsvári népzenekar: magyar, román és cigány népzene, táncházi muzsika és amerikai bluegrass.",
     },
     about: {
-      title: "Rólunk | Katlan zenekar",
+      title: "Katlan zenekar | Rólunk és a zenekar tagjai",
       description:
-        "A kolozsvári Katlan zenekar bemutatkozása és tagjai. Kárpát-medencei népzene és amerikai bluegrass.",
+        "A kolozsvári Katlan zenekar bemutatkozása és tagjai. Erdélyi és kárpát-medencei népzene, táncház és amerikai bluegrass.",
     },
     music: {
-      title: "Lenyomat | Katlan zenekar – zene és streaming",
+      title: "Lenyomat – Katlan zenekar | Album és streaming",
       description:
         "A Katlan zenekar Lenyomat című lemeze Spotify-on, Apple Musicon, YouTube Musicon, Amazon Musicon és Tidalen.",
     },
     media: {
-      title: "Média | Katlan zenekar – fotók és videók",
+      title: "Katlan zenekar | Koncertfotók és videók",
       description:
         "Koncertfotók és videók a kolozsvári Katlan zenekarról.",
     },
     contact: {
-      title: "Kapcsolat | Katlan zenekar – koncertszervezés",
+      title: "Katlan zenekar kapcsolat | Koncert- és táncházszervezés",
       description:
         "A Katlan zenekar elérhetőségei koncert, fesztivál, táncház és együttműködés szervezéséhez.",
     },
@@ -35,25 +35,25 @@ const seo: Record<Language, Record<PageKey, { title: string; description: string
     home: {
       title: "Katlan | Formație de muzică tradițională din Cluj",
       description:
-        "Katlan este o formație din Cluj care interpretează muzică tradițională maghiară, românească și romă, precum și bluegrass american.",
+        "Katlan este o formație de muzică tradițională din Cluj: folclor muzical maghiar, românesc și rom, alături de bluegrass american.",
     },
     about: {
-      title: "Despre noi | Katlan",
+      title: "Despre Katlan | Formație de muzică tradițională din Cluj",
       description:
         "Prezentarea formației Katlan din Cluj și membrii ei. Muzică tradițională din Bazinul Carpatic și bluegrass american.",
     },
     music: {
-      title: "Lenyomat | Katlan – muzică și streaming",
+      title: "Lenyomat – Katlan | Album și streaming",
       description:
         "Albumul Lenyomat al formației Katlan pe Spotify, Apple Music, YouTube Music, Amazon Music și Tidal.",
     },
     media: {
-      title: "Media | Katlan – fotografii și videoclipuri",
+      title: "Katlan | Fotografii de concert și videoclipuri",
       description:
         "Fotografii de concert și videoclipuri cu formația Katlan din Cluj.",
     },
     contact: {
-      title: "Contact | Katlan – concerte și evenimente",
+      title: "Contact Katlan | Concerte și evenimente",
       description:
         "Contactează formația Katlan pentru concerte, festivaluri, seri de dans și colaborări.",
     },
@@ -65,22 +65,22 @@ const seo: Record<Language, Record<PageKey, { title: string; description: string
         "Katlan is a band from Cluj playing Hungarian, Romanian and Roma folk music from the Carpathian Basin, along with American bluegrass.",
     },
     about: {
-      title: "About | Katlan band",
+      title: "About Katlan | Folk band from Cluj, Transylvania",
       description:
         "Meet Katlan, a folk and bluegrass band from Cluj, Transylvania, and learn about its members.",
     },
     music: {
-      title: "Lenyomat | Katlan – music and streaming",
+      title: "Lenyomat – Katlan | Album and streaming",
       description:
         "Listen to Katlan's album Lenyomat on Spotify, Apple Music, YouTube Music, Amazon Music and Tidal.",
     },
     media: {
-      title: "Media | Katlan – photos and videos",
+      title: "Katlan | Concert photos and videos",
       description:
         "Concert photography and videos featuring Katlan, a folk and bluegrass band from Cluj.",
     },
     contact: {
-      title: "Contact | Katlan – bookings and concerts",
+      title: "Contact Katlan | Concert and festival bookings",
       description:
         "Contact Katlan for concerts, festivals, dance-house events and collaborations.",
     },
