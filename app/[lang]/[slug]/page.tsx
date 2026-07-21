@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { content, isLanguage, languages, pageFromSlug, paths, type PageKey } from "../../content";
+import { isLanguage, languages, pageFromSlug, paths, type PageKey } from "../../content";
+import { metadataForPage } from "../../seo";
 import { SiteShell } from "../../SiteShell";
 
 export const dynamicParams = false;
@@ -17,9 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   if (!isLanguage(lang)) return {};
   const page = pageFromSlug(lang, slug);
   if (!page) return {};
-  const title = content[lang].nav[page];
-  const description = page === "about" ? content[lang].about.text : page === "music" ? content[lang].music.lead : page === "media" ? content[lang].home.intro : content[lang].contact.lead;
-  return { title, description };
+  return metadataForPage(lang, page);
 }
 
 export default async function ContentPage({ params }: { params: Promise<{ lang: string; slug: string }> }) {
