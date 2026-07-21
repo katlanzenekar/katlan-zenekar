@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "A kolozsvári Katlan zenekar kárpát-medencei népzenét és amerikai bluegrasst játszik.",
+    "A Katlan fiatal kolozsvári népzenészek zenekara: kárpát-medencei népzene, erdélyi táncház és amerikai bluegrass.",
   openGraph: {
     type: "website",
     locale: "hu_HU",
@@ -37,7 +37,7 @@ const musicGroupJsonLd = {
   email: "mailto:katlan.zenekar@gmail.com",
   telephone: "+40755465048",
   description:
-    "Kolozsvári népzenekar: magyar, román és cigány népzene, táncházi muzsika és amerikai bluegrass.",
+    "Fiatal kolozsvári népzenészek zenekara: magyar, román és cigány népzene, erdélyi táncház és amerikai bluegrass.",
   foundingLocation: {
     "@type": "Place",
     name: "Kolozsvár / Cluj-Napoca",
