@@ -12,10 +12,12 @@ const socialLinks = [
 
 function Header({ language, page }: { language: Language; page: PageKey }) {
   const t = content[language];
+  const brandLabel = language === "hu" ? "Katlan zenekar – főoldal" : language === "ro" ? "Katlan – pagina principală" : "Katlan – home";
+  const brandAlt = language === "hu" ? "Katlan zenekar" : language === "ro" ? "Formația Katlan" : "Katlan band";
   return (
     <header className="site-header">
-      <a className="brand" href={pageHref(language, "home")} aria-label="Katlan">
-        <img src="/katlan-zenekar/images/katlan-logo-dark.svg" alt="Katlan" />
+      <a className="brand" href={pageHref(language, "home")} aria-label={brandLabel}>
+        <img src="/katlan-zenekar/images/katlan-logo-dark.svg" alt={brandAlt} />
       </a>
       <nav className="desktop-nav" aria-label={t.common.menu}>
         {(Object.keys(t.nav) as PageKey[]).map((key) => (
@@ -136,10 +138,15 @@ function HomePage({ language }: { language: Language }) {
 }
 
 function MusicPage({ language }: { language: Language }) {
+  const albumAlt = language === "hu"
+    ? "A Katlan zenekar Lenyomat című albumának borítója"
+    : language === "ro"
+      ? "Coperta albumului Lenyomat al formației Katlan"
+      : "Cover of Katlan's album Lenyomat";
   return (
     <section className="music-page">
       <article className="album-feature">
-        <img className="album-cover" src="/katlan-zenekar/images/lenyomat-cover.webp" alt="Katlan — Lenyomat album borító" />
+        <img className="album-cover" src="/katlan-zenekar/images/lenyomat-cover.webp" alt={albumAlt} />
         <div className="album-copy">
           <p className="eyebrow">Katlan · 2025</p>
           <h1>Lenyomat</h1>
@@ -173,6 +180,7 @@ function MusicPage({ language }: { language: Language }) {
 
 function AboutPage({ language }: { language: Language }) {
   const t = content[language];
+  const aboutImageAlt = language === "hu" ? "A Katlan zenekar koncert közben" : language === "ro" ? "Formația Katlan în concert" : "Katlan performing live";
   const mapCopy = {
     hu: { title: "Ahol már játszottunk", count: "27 helyszín · 4 ország", pan: "Interaktív térkép. Mobilon húzd oldalra, billentyűzettel használd a nyilakat." },
     ro: { title: "Unde am cântat", count: "27 de locuri · 4 țări", pan: "Hartă interactivă. Glisează lateral pe mobil sau folosește săgețile tastaturii." },
@@ -192,7 +200,7 @@ function AboutPage({ language }: { language: Language }) {
     <>
       <section className="about-simple">
         <div className="about-image">
-          <img src="/katlan-zenekar/media/Katlan-2048-241212PIT-376.webp" alt="A Katlan zenekar koncerten" />
+          <img src="/katlan-zenekar/media/Katlan-2048-241212PIT-376.webp" alt={aboutImageAlt} />
         </div>
         <div className="about-copy">
           <h1>{t.nav.about}</h1>
@@ -284,6 +292,48 @@ const photos = [
   "/katlan-zenekar/media/Katlan-2048-241212PIT-385.webp",
 ] as const;
 
+const photoAlts: Record<Language, readonly string[]> = {
+  hu: [
+    "A Katlan zenekar koncerten, közönség előtt",
+    "Mandolin, gitár és nagybőgő a Katlan koncertjén",
+    "A Katlan tagjai énekelnek a színpadon",
+    "Hegedűsök, cimbalom és nagybőgő koncert közben",
+    "A Katlan zenekar közönség előtt énekel",
+    "Hegedű, harmonika és nagybőgő a színpadon",
+    "A teljes Katlan zenekar fekete-fehér koncertfotón",
+    "Hegedű, mandolin, gitár és nagybőgő bluegrass előadás közben",
+    "A Katlan bluegrass felállásban játszik",
+    "Nagybőgő az előtérben egy Katlan-koncerten",
+    "Gitár és nagybőgő közelről koncert közben",
+  ],
+  ro: [
+    "Formația Katlan în concert, în fața publicului",
+    "Mandolină, chitară și contrabas la un concert Katlan",
+    "Membrii formației Katlan cântând pe scenă",
+    "Viori, țambal și contrabas în concert",
+    "Formația Katlan cântând în fața publicului",
+    "Vioară, acordeon și contrabas pe scenă",
+    "Formația Katlan într-o fotografie de concert alb-negru",
+    "Vioară, mandolină, chitară și contrabas într-un moment bluegrass",
+    "Katlan interpretând bluegrass",
+    "Contrabas în prim-plan la un concert Katlan",
+    "Chitară și contrabas fotografiate de aproape în concert",
+  ],
+  en: [
+    "Katlan performing live in front of an audience",
+    "Mandolin, guitar and double bass at a Katlan concert",
+    "Katlan band members singing on stage",
+    "Violins, cimbalom and double bass during a concert",
+    "Katlan singing in front of an audience",
+    "Violin, accordion and double bass on stage",
+    "The full Katlan band in a black-and-white concert photo",
+    "Violin, mandolin, guitar and double bass during a bluegrass set",
+    "Katlan performing bluegrass",
+    "Double bass in the foreground at a Katlan concert",
+    "Guitar and double bass photographed close-up during a concert",
+  ],
+};
+
 function MediaPage({ language }: { language: Language }) {
   const t = content[language];
   return (
@@ -296,7 +346,7 @@ function MediaPage({ language }: { language: Language }) {
         <div className="photo-grid">
           {photos.map((src, index) => (
             <figure key={src}>
-              <img src={src} alt={`Katlan koncert ${index + 1}`} loading="lazy" />
+              <img src={src} alt={photoAlts[language][index]} loading="lazy" />
             </figure>
           ))}
         </div>
@@ -326,6 +376,7 @@ function MediaPage({ language }: { language: Language }) {
 
 function ContactPage({ language }: { language: Language }) {
   const t = content[language];
+  const contactImageAlt = language === "hu" ? "A Katlan zenekar koncert közben" : language === "ro" ? "Formația Katlan pe scenă" : "Katlan on stage";
   return (
     <section className="contact-page">
       <div className="contact-copy">
@@ -338,7 +389,7 @@ function ContactPage({ language }: { language: Language }) {
         </div>
       </div>
       <div className="contact-image">
-        <img src="/katlan-zenekar/media/370693955-346211544403989-8680754188917633003-n.webp" alt="A Katlan zenekar a színpadon" />
+        <img src="/katlan-zenekar/media/370693955-346211544403989-8680754188917633003-n.webp" alt={contactImageAlt} />
       </div>
     </section>
   );
