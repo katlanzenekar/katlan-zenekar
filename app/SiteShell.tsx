@@ -339,7 +339,6 @@ function ContactPage({ language }: { language: Language }) {
       </div>
       <div className="contact-image">
         <img src="/katlan-zenekar/media/370693955-346211544403989-8680754188917633003-n.webp" alt="A Katlan zenekar a színpadon" />
-        <img className="contact-logo" src="/katlan-zenekar/images/katlan-logo-transparent.png" alt="Katlan" />
       </div>
     </section>
   );
